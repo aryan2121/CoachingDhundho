@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+    tools:context=".MainActivity"
+    android:background="@drawable/screen5"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        app:menu="@menu/navigation"
+        app:itemBackground="@color/colorAccent"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/navigation"/>
+
+    <FrameLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/framelayout"
+        android:layout_above="@id/navigation">
+    </FrameLayout>
+
+</RelativeLayout>
+<!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:id="@+id/container"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context=".Home0"-->
+    <!--android:background="@drawable/screen5">-->
+
+
+
+    <!--<android.support.design.widget.BottomNavigationView-->
+        <!--android:id="@+id/navigation"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="47dp"-->
+        <!--android:background="?android:attr/windowBackground"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:menu="@menu/navigation">-->
+
+
+    <!--</android.support.design.widget.BottomNavigationView>-->
+
+    <!--<FrameLayout-->
+        <!--android:id="@+id/framelayout"-->
+        <!--android:layout_width="412dp"-->
+        <!--android:layout_height="613dp">-->
+
+    <!--</FrameLayout>-->
+
+<!--</android.support.constraint.ConstraintLayout>-->
