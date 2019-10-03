@@ -1,4 +1,4 @@
-package com.example.user.coachingdhundho
+package com.errorfoundteam.nist.coachingdhundho
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

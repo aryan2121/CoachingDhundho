@@ -1,17 +1,19 @@
-package com.example.user.coachingdhundho
+package com.errorfoundteam.nist.coachingdhundho
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.WindowManager
-import kotlinx.android.synthetic.main.activity_loginpage.*
-import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+
+
+class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_splash)
+
         //changing statusbar color
         if (android.os.Build.VERSION.SDK_INT >= 21) {
             val window = this.window
@@ -20,10 +22,10 @@ class MainActivity : AppCompatActivity() {
             window.statusBarColor = this.resources.getColor(R.color.your_color)
         }
 
-        next.setOnClickListener {
-            var i= intent
-            i= Intent(this,loginpage::class.java)
-            startActivity(i)
-        }
+
+        Handler().postDelayed({
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+        },3000)
     }
 }

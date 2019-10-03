@@ -1,7 +1,8 @@
-package com.example.user.coachingdhundho
+package com.errorfoundteam.nist.coachingdhundho
 
+import android.content.IntentFilter
+import android.net.ConnectivityManager
 import android.os.Bundle
-import android.os.Handler
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.FragmentTransaction
 import androidx.appcompat.app.AppCompatActivity
@@ -9,9 +10,19 @@ import android.view.WindowManager
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_home0.*
 
-class Home0 : AppCompatActivity()
+class Home0 : AppCompatActivity(), InternetCheckBroadcast.ConnectionReceiverListner {
 
-{
+
+    //checking Internet Connection
+    override fun onNetworkConnectionChanged(isConnected: Boolean) {
+
+        if (isConnected){
+            Toast.makeText(this,"connected", Toast.LENGTH_LONG).show()
+            //dashboardWithAllHostels()
+        }else
+            Toast.makeText(this,"Network Not Connected", Toast.LENGTH_LONG).show()
+    }//internet connection
+
 
     //now create five fragment as create in java
     lateinit var hhomeFragment: homeFragment
@@ -19,9 +30,6 @@ class Home0 : AppCompatActivity()
     lateinit var nnoticeFragment: notificationFragment
     lateinit var ccategoryFragment: categoryFragment
     lateinit var pprofileFragment: profileFragment
-
-
-
 
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -84,8 +92,12 @@ class Home0 : AppCompatActivity()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         setContentView(R.layout.activity_home0)
+
+        //Implementing the InternetCheckBroadcast
+        baseContext.registerReceiver(InternetCheckBroadcast(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+        MyApplication.instance.setConnectionListener(this)
+
         hhomeFragment = homeFragment()
         supportFragmentManager
                 .beginTransaction()
