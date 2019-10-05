@@ -8,8 +8,3 @@ class SaveData (
         val price: String,
         val day: String,
         val rating : String)
-{
-
-    constructor() : this("", "","","","","","")
-
-}
