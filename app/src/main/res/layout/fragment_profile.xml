@@ -6,48 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".profileFragment"
     android:layout_gravity="center"
+    android:foregroundGravity="center"
+    android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/pink"
-    android:orientation="vertical">
+    android:background="@color/pink">
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:src="@drawable/profile_eclipse"
-        android:id="@+id/imageView_profileImage"
-        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView_profile_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/profile_eclipse"/>
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:textColor="#1C34FF"
+       android:id="@+id/profile_name"
+       android:layout_height="wrap_content"
+       android:text="Your NAme IS"/>
 
     <Button
         android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="Edit Profile"
-        android:textAllCaps="false"
-        android:id="@+id/button_profile_edit"
-        />
+        android:layout_height="wrap_content"
+        android:text="Hello World"
+        android:textAllCaps="false"/>
 
     <Button
-        android:id="@+id/button_orders"
         android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="Orders"
-        android:textAllCaps="false"
-        />
-    <Button
-        android:id="@+id/coaching_dhundo_support"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_feedback"
         android:text="Feedback"
-        android:textColor="@color/blue"
-        android:textAllCaps="false"
-        />
+        android:textAllCaps="false"/>
+
     <Button
-        android:id="@+id/profile_logout"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:text="Coaching Support Team"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/logout_profile"
         android:text="Logout"
-        android:textAllCaps="false"
-        />
+        android:textAllCaps="false"/>
+
+
+
 
 
 </LinearLayout>

@@ -1,7 +1,8 @@
 <resources>
+    <integer name="tw">20</integer>
     <string name="app_name">Coaching Dhundho</string>
-    <string name="s1">Enter your number here</string>
 
+    <string name="s1">Enter your number here</string>
     <string name="s2">Developed and Designed by</string>
     <string name="t1">Please Wait.</string>
     <string name="t2">We will auto verify the OTP sent to</string>
@@ -13,30 +14,29 @@
     <string name="category">Category</string>
     <string name="notifications">Notifications</string>
     <string name="profile">Profile</string>
+
+
     <string name="search">Search</string>
 
-
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     //first fragement strings
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Trending_Courses">Trending Courses</string>
     <string name="search_">Search Coaching Institutes courses</string>
     <string name="Nearby_Institutes">Nearby Institutes</string>
     <string name="Popular">Popular</string>
     <string name="qq">qq</string>
-    <string name="qqq">qqq</string>
 
     //search fragment
+    <string name="qqq">qqq</string>
     <string name="search_result">Search Result</string>
+    //filter page
     <string name="filters">   Filters:</string>
-//filter page
     <string name="filter">   Filters</string>
     <string name="sortby">   sortby</string>
     <string name="popular">   popular</string>
     <string name="price_range">  Price Range</string>
     <string name="star_rating">   Star Rating</string>
     <string name="Twenty">   20 Results</string>
-    <integer name="tw">20</integer>
 
     //filter spinner
     <string name="spinner">Spinner</string>

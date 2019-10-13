@@ -7,7 +7,6 @@ import android.os.Handler
 import android.view.WindowManager
 
 
-
 class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

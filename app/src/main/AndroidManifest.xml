@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.errorfoundteam.nist.coachingdhundho">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/main_icon"
         android:label="@string/app_name"
-        android:name=".MyApplication"
         android:roundIcon="@mipmap/main_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name="com.errorfoundteam.nist.coachingdhundho.SplashActivity">
-
-        </activity>
-        <activity android:name="com.errorfoundteam.nist.coachingdhundho.loginpage" />
-        <activity android:name="com.errorfoundteam.nist.coachingdhundho.MainActivity"/>
-        <activity android:name="com.errorfoundteam.nist.coachingdhundho.Home0"
-                  android:windowSoftInputMode="stateHidden">
+        <activity android:name=".Enroll_payment_Activity"></activity>
+        <activity android:name=".SplashActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:noHistory="true" />
+        <activity
+            android:name=".loginpage"
+            android:noHistory="true" />
+        <activity
+            android:name=".Home0"
+            android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.errorfoundteam.nist.coachingdhundho.filterActivity"/>
-
-
-        <receiver
-            android:name="com.errorfoundteam.nist.coachingdhundho.InternetCheckBroadcast"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="ConnectivityManager.CONNECTIVITY_ACTION" />
-            </intent-filter>
-        </receiver>
+        <activity android:name=".openInstitute" />
+        <activity
+            android:name=".filterActivity"
+            android:label=""
+            android:noHistory="true" />
     </application>
 
 </manifest>

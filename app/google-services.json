@@ -124,6 +124,43 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291162221981:android:48ad6860b10ab08953d374",
+        "android_client_info": {
+          "package_name": "com.example.user.coachingdhundho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "291162221981-0o85nt7ir6325eb1dlb1pbi103uud51t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.coachingdhundho",
+            "certificate_hash": "a2884a8f3dd32617b54951fc0e859b52a70e0cb0"
+          }
+        },
+        {
+          "client_id": "291162221981-0768lps3e56nlifkbgl1go294dftn6mp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfBZ6Em61EY5pL5Kq3EebNpknc_tC1cvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "291162221981-0768lps3e56nlifkbgl1go294dftn6mp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

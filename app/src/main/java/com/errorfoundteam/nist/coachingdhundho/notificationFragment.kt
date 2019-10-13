@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 
 
-
 class notificationFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

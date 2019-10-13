@@ -18,6 +18,8 @@
 
     <color name="pink">#72ff0088</color>
 
+    <color name="placeholder_bg">#dddddd</color>
+
     <color name="black">#000000</color>
 
 </resources>

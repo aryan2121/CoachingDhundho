@@ -1,5 +1,8 @@
 package com.errorfoundteam.nist.coachingdhundho
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 class SaveData (
         val coachingname : String,
         val location : String ,
@@ -24,6 +27,7 @@ class User(
     constructor() : this("","")
 }
 
+@Parcelize
 class uploadInstitute(val insName : String ,
                       val ownerName : String ,
                       val city : String ,
@@ -43,7 +47,7 @@ class uploadInstitute(val insName : String ,
                       val insImage : String,
                       val extrasubject : String,
                       val lati : String,
-                      val longi : String){
+                      val longi : String):Parcelable{
     constructor():this("","","","","","","","","",
             "","","","","","","","",
             "","","")
@@ -68,7 +72,27 @@ class uploadclass11science(val physics : String,
 }
 
 
+class uploadclass12science(val physics : String,
+                           val chemistry : String,
+                           val math : String,
+                           val computer  : String,
+                           val biology : String,
+                           val english : String){
+    constructor():this("","","","","","")
+}
+
+
 class uploadclass11commerce(val accounts : String,
+                            val bst : String,
+                            val economics : String,
+                            val bmt  : String,
+                            val etp : String,
+                            val computer : String,
+                            val english: String){
+    constructor():this("","","","","","","")
+}
+
+class uploadclass12commerce(val accounts : String,
                             val bst : String,
                             val economics : String,
                             val bmt  : String,
@@ -107,6 +131,8 @@ class uploadcomputercources(val  dca : String,
             "","","","")
 }
 
+
+@Parcelize
 class uploadcompetitiveexams(val  ssc : String,
                              val railway : String,
                              val banking : String,
@@ -122,7 +148,7 @@ class uploadcompetitiveexams(val  ssc : String,
                              val ugcNet : String,
                              val aipmt : String,
                              val polytechnic  : String,
-                             val spokenEnglish: String){
+                             val spokenEnglish: String):Parcelable{
     constructor():this("","","","","","","","","","",
             "","","","","","")
 }
