@@ -9,115 +9,115 @@
     tools:context=".homeFragment">
 
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="268dp"
-        android:layout_marginRight="268dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/search_small_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/editText_search_homepage"
-        app:layout_constraintEnd_toEndOf="@+id/editText_search_homepage"
-        app:layout_constraintTop_toTopOf="@+id/editText_search_homepage" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView4"-->
+<!--        android:layout_width="25dp"-->
+<!--        android:layout_height="25dp"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:layout_marginEnd="268dp"-->
+<!--        android:layout_marginRight="268dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:src="@drawable/search_small_icon"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/editText_search_homepage"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/editText_search_homepage"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/editText_search_homepage" />-->
 
-    <EditText
-        android:id="@+id/editText_search_homepage"
-        android:layout_width="270dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/bpg_glaho_arial_v5_big"
-        android:hint="@string/search_"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <EditText-->
+<!--        android:id="@+id/editText_search_homepage"-->
+<!--        android:layout_width="270dp"-->
+<!--        android:layout_height="43dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:fontFamily="@font/bpg_glaho_arial_v5_big"-->
+<!--        android:hint="@string/search_"-->
+<!--        android:textSize="14sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/bpg_glaho_arial_v5_big"
-        android:text="@string/Trending_Courses"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/editText_search_homepage"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/editText_search_homepage" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView10"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="19dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:fontFamily="@font/bpg_glaho_arial_v5_big"-->
+<!--        android:text="@string/Trending_Courses"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/editText_search_homepage"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/imageView4"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editText_search_homepage" />-->
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="330dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/editText_search_homepage"
-        app:layout_constraintHorizontal_bias="0.455"
-        app:layout_constraintStart_toStartOf="@+id/editText_search_homepage"
-        app:layout_constraintTop_toBottomOf="@+id/editText_search_homepage">
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/constraintLayout"-->
+<!--        android:layout_width="330dp"-->
+<!--        android:layout_height="69dp"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/editText_search_homepage"-->
+<!--        app:layout_constraintHorizontal_bias="0.455"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/editText_search_homepage"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editText_search_homepage">-->
 
-        <Button
-            android:id="@+id/button_upsc_homepage"
-            android:layout_width="85dp"
-            android:layout_height="22dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/upsc"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+<!--        <Button-->
+<!--            android:id="@+id/button_upsc_homepage"-->
+<!--            android:layout_width="85dp"-->
+<!--            android:layout_height="22dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:background="@drawable/upsc"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.0" />-->
 
-        <Button
-            android:id="@+id/button_ssc_homepage"
-            android:layout_width="85dp"
-            android:layout_height="22dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/ssc"
-            app:layout_constraintEnd_toStartOf="@+id/button_phy_homepage"
-            app:layout_constraintHorizontal_bias="0.133"
-            app:layout_constraintStart_toEndOf="@+id/button_upsc_homepage"
-            app:layout_constraintTop_toTopOf="parent" />
+<!--        <Button-->
+<!--            android:id="@+id/button_ssc_homepage"-->
+<!--            android:layout_width="85dp"-->
+<!--            android:layout_height="22dp"-->
+<!--            android:layout_marginStart="36dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:background="@drawable/ssc"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/button_phy_homepage"-->
+<!--            app:layout_constraintHorizontal_bias="0.133"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/button_upsc_homepage"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
-        <Button
-            android:id="@+id/button_phy_homepage"
-            android:layout_width="85dp"
-            android:layout_height="22dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/physics"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+<!--        <Button-->
+<!--            android:id="@+id/button_phy_homepage"-->
+<!--            android:layout_width="85dp"-->
+<!--            android:layout_height="22dp"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:background="@drawable/physics"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
-        <Button
-            android:id="@+id/button_math_homepage"
-            android:layout_width="85dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/trending_course"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_upsc_homepage"
-            app:layout_constraintVertical_bias="0.333" />
+<!--        <Button-->
+<!--            android:id="@+id/button_math_homepage"-->
+<!--            android:layout_width="85dp"-->
+<!--            android:layout_height="22dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:background="@drawable/trending_course"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/button_upsc_homepage"-->
+<!--            app:layout_constraintVertical_bias="0.333" />-->
 
-        <Button
-            android:id="@+id/button_jeemain_homepage"
-            android:layout_width="85dp"
-            android:layout_height="22dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/trending_course_copy"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/button_math_homepage"
-            app:layout_constraintTop_toBottomOf="@+id/button_ssc_homepage"
-            app:layout_constraintVertical_bias="0.111" />
+<!--        <Button-->
+<!--            android:id="@+id/button_jeemain_homepage"-->
+<!--            android:layout_width="85dp"-->
+<!--            android:layout_height="22dp"-->
+<!--            android:layout_marginStart="36dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:background="@drawable/trending_course_copy"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/button_math_homepage"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/button_ssc_homepage"-->
+<!--            app:layout_constraintVertical_bias="0.111" />-->
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
     <TextView
         android:layout_width="126dp"
@@ -137,18 +137,17 @@
         android:id="@+id/imageView2"
         android:layout_width="330dp"
         android:layout_height="110dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/ad"
-        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleViewHomeId"
-        android:layout_width="307dp"
-        android:layout_height="365dp"
+        android:layout_width="345dp"
+        android:layout_height="583dp"
         android:layout_marginTop="40dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"

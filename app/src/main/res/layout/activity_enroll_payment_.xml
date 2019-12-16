@@ -1,19 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     tools:context=".Enroll_payment_Activity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="500"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:focusable="false"
+        android:editable="false"
+        android:id="@+id/amount_upi_payment" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="UPI ID"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/upi_id_upi_payment"
+        android:layout_below="@+id/amount_upi_payment"
+        android:text="souravkumar54325@okicici"
+        android:focusable="false"
+        android:editable="false"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your name"
+        android:paddingLeft="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/name_upi_payment"
+        android:layout_below="@+id/upi_id_upi_payment"
+        android:focusable="false"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Note"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/note_transaction_upi_payment"
+        android:layout_below="@+id/name_upi_payment"
+        android:text="Registration Fees"
+        android:editable="false"
+        android:focusable="false"/>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/googlepaybuttonsblackk"
+        android:textColor="#fff"
+        android:id="@+id/button_send_upi_payment"
+        android:layout_below="@+id/note_transaction_upi_payment"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        />
+
+
     <TextView
-        android:id="@+id/textViewPayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="blank"
-        android:layout_gravity="center"
-        android:textSize="30sp"/>
+        android:id="@+id/textview_note"
+        android:layout_below="@+id/button_send_upi_payment"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="264dp"
+        android:visibility="visible"
+        android:gravity="center"
+        android:text="NOTE : Please make sure the room is \n available by clicking on enquiry \n before the payment."
+        android:textColor="#FF0019"
+        android:textSize="20sp" />
 
-</LinearLayout>
+
+
+</RelativeLayout>

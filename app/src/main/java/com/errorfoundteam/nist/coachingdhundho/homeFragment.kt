@@ -25,10 +25,19 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.recycler_view_holder_home.*
 import kotlinx.android.synthetic.main.recycler_view_holder_home.view.*
 import kotlin.coroutines.coroutineContext
+import kotlin.random.Random
 
 class homeFragment : Fragment() {
 
 
+
+    override fun onResume() {
+        super.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val layoutManager = LinearLayoutManager(activity)
@@ -41,7 +50,10 @@ class homeFragment : Fragment() {
         adpter.add(placeholder())
         adpter.add(placeholder())
         adpter.add(placeholder())
-        getdata()
+        adpter.add(placeholder())
+        adpter.add(placeholder())
+        adpter.add(placeholder())
+        getdata(context!!)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -55,14 +67,14 @@ class homeFragment : Fragment() {
         const val Coaching_Key = "HOSTEL_KEY"
         const val array_list = "ARRAYS"
     }
-    private  fun getdata() {
+    private  fun getdata(context: Context) {
 
-        val array = Array<String>(45){ String()}
+        val array = Array<String>(100){ String()}
         var number = 1
         val intent = Intent(context, openInstitute::class.java)
 
         Toast.makeText(context,"This is Home Activity",Toast.LENGTH_SHORT).show()
-        val ref = FirebaseDatabase.getInstance().getReference("/Institutes/")
+        val ref = FirebaseDatabase.getInstance().getReference("/Institutes/").orderByPriority()
         ref.addValueEventListener(object : ValueEventListener {
 
             override fun onCancelled(p0: DatabaseError) {
@@ -75,8 +87,8 @@ class homeFragment : Fragment() {
                 val adapter = GroupAdapter<ViewHolder>()
 
                 p0.children.forEach {
-//                    array[number] = it.key.toString()
-//                    number++
+                    array[number] = it.key.toString()
+                    number++
 
                     val sime = it.childrenCount
                     Log.d("LELELE",sime.toString())
@@ -86,17 +98,24 @@ class homeFragment : Fragment() {
 
                     adapter.setOnItemClickListener { item, view ->
                         val coachingItem = item as Order
+                        intent.putExtra("SEARCHKEY", "")
+                        intent.putExtra("HOMEKEY", "HOMEKEY")
                         intent.putExtra(Coaching_Key, coachingItem.coaching)
                         startActivity(intent)
 
                     }
                     if (coaching != null)
-                        adapter.add(Order(coaching,requireContext()))
+                        adapter.add(Order(coaching,context))
 
                     Log.d("Save", "yhin to hai hi")
                 }
 
-                recycleViewHomeId.adapter = adapter
+                intent.putExtra(array_list,array)
+                if (recycleViewHomeId == null)
+                {
+                    Log.d("Open","Sorry Bro ab mai Crash krega")
+                }else
+                    recycleViewHomeId.adapter = adapter
 
             }
         })
@@ -124,10 +143,21 @@ class Order(val coaching: uploadInstitute,val context: Context) : Item<ViewHolde
 
         //viewHolder.itemView.name_recyclerItem.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_in_animation_recycleritem))
         viewHolder.itemView.name_recyclerItem.text = coaching.insName
-        viewHolder.itemView.address_recyclerItem.text =  coaching.insAddress
+        if (coaching.insAddress.isNotEmpty()) {
+            viewHolder.itemView.address_recyclerItem.text = coaching.insAddress
+        }else
+        {
+            val address = "Ranchi , Jharkhand"
+            viewHolder.itemView.address_recyclerItem.text = address
+        }
+
         Picasso.get().load(R.drawable.placeholder_img).into(viewHolder.itemView.ImageView_recycleritem)
         if (coaching.insLogo.isNotEmpty()) {
             Picasso.get().load(coaching.insLogo).resize(50,50).placeholder(R.drawable.placeholder_img).into(viewHolder.itemView.ImageView_recycleritem)
+        }else if (coaching.insBanner1.isNotEmpty()) {
+            Picasso.get().load(coaching.insBanner1).resize(50,50).placeholder(R.drawable.placeholder_img).into(viewHolder.itemView.ImageView_recycleritem)
+        }else if (coaching.insImage.isNotEmpty()) {
+            Picasso.get().load(coaching.insImage).resize(50,50).placeholder(R.drawable.placeholder_img).into(viewHolder.itemView.ImageView_recycleritem)
         }
     }
 }

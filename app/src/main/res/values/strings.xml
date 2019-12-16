@@ -2,6 +2,10 @@
     <integer name="tw">20</integer>
     <string name="app_name">Coaching Dhundho</string>
 
+    <string name="facebook_app_id">382863815977332</string>
+    <string name="fb_login_protocol_scheme">fb382863815977332</string>
+
+
     <string name="s1">Enter your number here</string>
     <string name="s2">Developed and Designed by</string>
     <string name="t1">Please Wait.</string>

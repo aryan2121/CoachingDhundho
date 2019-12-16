@@ -9,7 +9,7 @@
     android:foregroundGravity="center"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/pink">
+    android:background="@drawable/screen51">
 
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -25,9 +25,11 @@
        android:layout_height="wrap_content"
        android:text="Your NAme IS"/>
 
-    <Button
-        android:layout_width="200dp"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/emailid_profile"
+        android:textColor="#1C34FF"
         android:text="Hello World"
         android:textAllCaps="false"/>
 
@@ -41,6 +43,7 @@
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:id="@+id/coaching_support_team"
         android:text="Coaching Support Team"
         android:textAllCaps="false"/>
 

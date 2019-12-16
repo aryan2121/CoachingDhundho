@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
+import com.facebook.Profile
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.firebase.auth.FirebaseAuth
 
 
 class SplashActivity : AppCompatActivity() {
@@ -23,8 +26,15 @@ class SplashActivity : AppCompatActivity() {
 
 
         Handler().postDelayed({
-            startActivity(Intent(this,MainActivity::class.java))
-            finish()
+            //val accessToken = AccessToken.getCurrentAccessToken()
+            val acc = GoogleSignIn.getLastSignedInAccount(this)
+            if (acc != null || FirebaseAuth.getInstance().currentUser != null) {
+                startActivity(Intent(this@SplashActivity,Home0::class.java))
+                finish()
+            }else{
+                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                finish()
+            }
         },3000)
     }
 }

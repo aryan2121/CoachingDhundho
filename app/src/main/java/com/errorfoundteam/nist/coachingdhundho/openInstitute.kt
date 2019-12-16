@@ -9,16 +9,21 @@ import android.view.View
 import android.widget.Toast
 import androidx.constraintlayout.widget.Placeholder
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.facebook.Profile
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_open_institute.*
+import kotlinx.android.synthetic.main.activity_open_institute.view.*
 import kotlinx.android.synthetic.main.coursedetails_container.view.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlin.coroutines.coroutineContext
 
 class openInstitute : AppCompatActivity() {
+    lateinit var coaching : uploadInstitute
     companion object{
         const val PAYMENT = "PAYMENT"
     }
@@ -32,21 +37,40 @@ class openInstitute : AppCompatActivity() {
         val adpter = GroupAdapter<ViewHolder>()
         openInstitiuterecycler.adapter = adpter
 
-        val coaching = intent.getParcelableExtra<uploadInstitute>("HOSTEL_KEY")
+
+        val homekey = intent.getStringExtra("HOMEKEY")
+        val searchkey = intent.getStringExtra("SEARCHKEY")
+
+
+
+
+        if (homekey.isNotEmpty()) {
+            coaching = intent.getParcelableExtra<uploadInstitute>("HOSTEL_KEY")
+        }else
+             coaching = intent.getParcelableExtra<uploadInstitute>("SEARCHDATA")
         val courseCompetitive = intent.getParcelableExtra<uploadcompetitiveexams>("COMPTETIVE")
 
-            Log.d("OpenInstitute", courseCompetitive.jpsc)
-        Log.d("LOL", courseCompetitive.upsc)
-        Log.d("OpenInstitute", courseCompetitive.iitjee)
-        Log.d("OpenInstitute", courseCompetitive.railway)
-        Log.d("OpenInstitute", courseCompetitive.ssc)
+           // Log.d("OpenInstitute", courseCompetitive.jpsc)
+//        Log.d("LOL", courseCompetitive.upsc)
+//        Log.d("OpenInstitute", courseCompetitive.iitjee)
+//        Log.d("OpenInstitute", courseCompetitive.railway)
+//        Log.d("OpenInstitute", courseCompetitive.ssc)
 
         openInst_INSTname_textViewId.text = coaching.insName
-        openInst_Details_textViewId.text = coaching.fascilities
+        if(coaching.fascilities.isNotEmpty()) {
+            openInst_Details_textViewId.text = coaching.fascilities
+        }else
+            openInst_Details_textViewId.text = "This Institute Provide Experienced Faculties\n Best Learning Enviornment\n"
         openInst_Location_textViewId.text = coaching.insAddress
-        openInst_Price_textViewId.text = coaching.insregistrationfees
+        texteView_price_openIns.text = "Reg fee : "+coaching.insregistrationfees
 
         if (coaching.insImage.isNotEmpty()){
+            Picasso.get().load(coaching.insImage).into(categoryImgId)
+        }else
+            if (coaching.insBanner1.isNotEmpty()){
+                Picasso.get().load(coaching.insBanner1).into(categoryImgId)
+            }else
+                if (coaching.insImage.isNotEmpty()){
             Picasso.get().load(coaching.insImage).into(categoryImgId)
         }
 
@@ -63,10 +87,12 @@ class openInstitute : AppCompatActivity() {
         //calling an institute by the call button
         openInst_Call_ButtonId.setOnClickListener{
             val number = coaching.mobilenumber
+            callButton()
 
             val makeCall = Intent(Intent.ACTION_DIAL)
             makeCall.setData(Uri.parse("tel:$number"))
             startActivity(makeCall)
+
         }
 
         //GET DIRECTION ON MAP LISTNER
@@ -85,6 +111,30 @@ class openInstitute : AppCompatActivity() {
 
 
 
+    }
+
+    //uploading user for notification
+    private fun callButton(){
+        val acct = GoogleSignIn.getLastSignedInAccount(this)
+        val chillld = acct!!.displayName + acct.id
+        val inst = coaching.insName
+        var fee = "Not specified"
+        if (coaching.insregistrationfees.isNotEmpty()) {
+            fee = coaching.insregistrationfees
+        }
+
+        val call  = FirebaseDatabase.getInstance().getReference("/Notification/$chillld")
+        val userDatatoFirebase = SavingUserData(
+                acct.displayName.toString(),
+                acct.email.toString(),
+                acct.id.toString(),
+                coaching.insName,
+                coaching.insAddress,
+                fee
+        )
+        call.child(inst).setValue(userDatatoFirebase).addOnCompleteListener {
+            Log.d("CallButton Clicked","User Uploaded Becose Call button clicked")
+        }
     }
 
     //getting course details and all
@@ -434,4 +484,5 @@ class CoursePlaceHolder(val name : String): Item<ViewHolder>(){
     }
 
 }
+
 

@@ -10,6 +10,7 @@ class Enroll_payment_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_enroll_payment_)
         val coaching = intent.getParcelableExtra<uploadInstitute>("PAYMENT")
-        textViewPayment.text = coaching.insregistrationfees
+
+
     }
 }

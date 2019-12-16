@@ -85,7 +85,7 @@
         android:layout_height="23dp"
         android:layout_marginTop="3dp"
         android:fontFamily="@font/bpg_glaho_arial_v5_big"
-        android:text="@string/t4"
+        android:text="Auto verifying OTP"
         android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintTop_toBottomOf="@+id/editText_otp"
@@ -94,29 +94,29 @@
         app:layout_constraintStart_toStartOf="@+id/textView"
         tools:layout_editor_absoluteY="245dp" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="13dp"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/bpg_glaho_arial_v5_big"
-        android:text="@string/t5"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView8"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="13dp"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:fontFamily="@font/bpg_glaho_arial_v5_big"-->
+<!--        android:text="@string/t5"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="12sp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/textView"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/textView5"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView5" />-->
 
     <Button
         android:id="@+id/login"
         android:layout_width="91dp"
         android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/get_otp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

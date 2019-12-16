@@ -1,7 +1,13 @@
 package com.errorfoundteam.nist.coachingdhundho
 
 import android.os.Parcelable
+import android.provider.ContactsContract
 import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+class FeedbackUpload(val feedback : String): Parcelable {
+    constructor():this("")
+}
 
 class SaveData (
         val coachingname : String,
@@ -19,12 +25,17 @@ class SaveData (
 
 
 
-class User(
-        val username: String,
-        val email: String
-){
-
-    constructor() : this("","")
+@Parcelize
+class SavingUserData(val userName : String, val userEmail : String, val id : String,
+                     val InsName : String,
+                     val InsAddress : String,
+                     val INsRegFee :String) : Parcelable{
+    constructor() : this(userName = "",
+            userEmail = "",
+            id = "",
+            InsName = "",
+            InsAddress = "",
+            INsRegFee = "")
 }
 
 @Parcelize

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -26,43 +27,22 @@ class categoryFragment : Fragment() {
     override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        card_bank.setOnClickListener {
-
-            val ref = FirebaseDatabase.getInstance().getReference("/Courses/")
-            ref.addValueEventListener(object : ValueEventListener{
-                override fun onCancelled(p0: DatabaseError) {
-                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                }
-
-                override fun onDataChange(p0: DataSnapshot) {
-                    p0.children.forEach {
-                        val bank = it.getValue(uploadcompetitiveexams::class.java)
-                        Log.d("LOLOLO","Its here")
-                        Log.d("LOLOLO",it.key)
-                        if (bank != null){
-                            Log.d("LOLOLO","HELLO")
-                            if (bank.banking.isNotEmpty()){
-                                Log.d("LOLOLO",it.key)
-                            }
-                        }
-                    }
-                }
-            })
-
-            
+        imageView_ads1.setOnClickListener{
+            Toast.makeText(context,"Please Contact Admin For Ads",Toast.LENGTH_SHORT).show()
         }
-        card_catandxat.setOnClickListener {
-
+        imageView_ads2.setOnClickListener{
+            Toast.makeText(context,"Please Contact Admin For Ads",Toast.LENGTH_SHORT).show()
         }
-        card_computer.setOnClickListener {
-
+        imageView_ads3.setOnClickListener{
+            Toast.makeText(context,"Please Contact Admin For Ads",Toast.LENGTH_SHORT).show()
         }
-        card_ssc.setOnClickListener {
-
+        imageView_ads4.setOnClickListener{
+            Toast.makeText(context,"Please Contact Admin For Ads",Toast.LENGTH_SHORT).show()
         }
-        card_upsc.setOnClickListener {
-
+        imageView_ads5.setOnClickListener{
+            Toast.makeText(context,"Please Contact Admin For Ads",Toast.LENGTH_SHORT).show()
         }
+
     }
 
 }

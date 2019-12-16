@@ -3,9 +3,7 @@ package com.errorfoundteam.nist.coachingdhundho
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.util.Log
-import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import com.google.android.gms.tasks.TaskExecutors
@@ -13,16 +11,14 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
-import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_loginpage.*
 import java.util.concurrent.TimeUnit
-import android.R.attr.start
 import android.content.IntentFilter
 import android.os.CountDownTimer
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.net.ConnectivityManager
+import com.facebook.CallbackManager
+import com.facebook.FacebookSdk
+import java.util.*
 
 
 class loginpage : AppCompatActivity(), InternetCheckBroadcast.ConnectionReceiverListner {
@@ -31,6 +27,7 @@ class loginpage : AppCompatActivity(), InternetCheckBroadcast.ConnectionReceiver
     var verificationId = ""
     var code = ""
     lateinit var cTimer : CountDownTimer
+
 
 
 //checking Internet Connection
@@ -65,6 +62,7 @@ class loginpage : AppCompatActivity(), InternetCheckBroadcast.ConnectionReceiver
 
         val phoneNumber = intent.getStringExtra("phoneNumber")
         mAuth = FirebaseAuth.getInstance()
+        textView4.text = phoneNumber
         verifyPhoneNumber(phoneNumber!!)
 
         //changing statusbar color
