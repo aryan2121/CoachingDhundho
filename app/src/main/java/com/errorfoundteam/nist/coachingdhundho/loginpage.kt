@@ -16,9 +16,6 @@ import java.util.concurrent.TimeUnit
 import android.content.IntentFilter
 import android.os.CountDownTimer
 import android.net.ConnectivityManager
-import com.facebook.CallbackManager
-import com.facebook.FacebookSdk
-import java.util.*
 
 
 class loginpage : AppCompatActivity(), InternetCheckBroadcast.ConnectionReceiverListner {
@@ -40,14 +37,6 @@ class loginpage : AppCompatActivity(), InternetCheckBroadcast.ConnectionReceiver
             Toast.makeText(this,"Network Not Connected",Toast.LENGTH_LONG).show()
     }//internet connection
 
-    //start timer function
-    fun startTimer() {
-        cTimer = object : CountDownTimer(60000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {}
-            override fun onFinish() {}
-        }
-        cTimer.start()
-    }//timer function
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,8 +46,6 @@ class loginpage : AppCompatActivity(), InternetCheckBroadcast.ConnectionReceiver
         baseContext.registerReceiver(InternetCheckBroadcast(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
         MyApplication.instance.setConnectionListener(this)
 
-
-        startTimer()
 
         val phoneNumber = intent.getStringExtra("phoneNumber")
         mAuth = FirebaseAuth.getInstance()
@@ -132,34 +119,6 @@ class loginpage : AppCompatActivity(), InternetCheckBroadcast.ConnectionReceiver
                     if (it.isSuccessful){
 //                        val account = GoogleSignIn.getLastSignedInAccount(this)
                         editText_otp.setText("${credential.smsCode}")
-
-//                        if (ContactsContract.Profile.getCurrentProfile() != null) {
-//                            val chillld = ContactsContract.Profile.getCurrentProfile().name + ContactsContract.Profile.getCurrentProfile().id
-//                            val reff = FirebaseDatabase.getInstance().getReference("/UserData")
-//                            val userDatatofirebase = SavingUserData(
-//                                    Profile.getCurrentProfile().name,
-//                                    Profile.getCurrentProfile().id.toString(),
-//                                    FirebaseAuth.getInstance().currentUser!!.phoneNumber.toString()
-//                            )
-//
-//                            reff.child(chillld).setValue(userDatatofirebase).addOnCompleteListener {
-//                                Log.d("GmailRegistration", "User Uploaded Successfully")
-//                            }
-//                        }else
-//                            if (account != null){
-//                                val chillld = account.displayName + account.id
-//                                val ref = FirebaseDatabase.getInstance().getReference("/UserData")
-//                                val UploadUserDatatoFirebase = SavingUserData(
-//                                        account.displayName.toString(),
-//                                        account.email.toString(),
-//                                        FirebaseAuth.getInstance().currentUser!!.phoneNumber.toString()
-//                                )
-//
-//                                ref.child(chillld).setValue(UploadUserDatatoFirebase).addOnCompleteListener {
-//                                    Log.d("GmailRegistration", "User Uploaded Successfully")
-//                                }
-//                            }
-
 
                         Toast.makeText(this,"phone number added",Toast.LENGTH_LONG).show()
                         startActivity(Intent(this,Home0::class.java))
