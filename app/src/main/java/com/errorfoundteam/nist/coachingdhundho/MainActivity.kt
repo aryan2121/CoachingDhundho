@@ -15,6 +15,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_details_phone_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -22,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var mGoogleSignInClient : GoogleSignInClient
     lateinit var mGoogleSignInOptions : GoogleSignInOptions
+    val database = FirebaseDatabase.getInstance()
     lateinit var callbackManager : CallbackManager
     val Unique_Code : Int = 1
 
@@ -83,10 +89,25 @@ class MainActivity : AppCompatActivity() {
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
         try {
             val account = completedTask.getResult(ApiException::class.java)
+            val userInfo = SaveUserInfo(account!!.displayName.toString(),account.email.toString(),"")
+            val ref = database.getReference("UserInfo")
+            ref.child(name_details_phoneLogin.text.toString()).setValue(userInfo)
 
-            // Signed in successfully, show authenticated UI.
-           // updateUI(account)
-            Toast.makeText(this,account!!.displayName,Toast.LENGTH_LONG).show()
+            val gmailListner = object : ValueEventListener{
+                override fun onCancelled(p0: DatabaseError) {
+                    Log.d("MainActivity",p0.details)
+                }
+
+                override fun onDataChange(p0: DataSnapshot) {
+                    // Signed in successfully.
+                    //Toast.makeText(this,account!!.displayName,Toast.LENGTH_LONG).show()
+                    val intent = Intent(this@MainActivity,Home0::class.java)
+                    startActivity(intent)
+                }
+            }
+            ref.addValueEventListener(gmailListner)
+
+
         } catch (e: ApiException) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.

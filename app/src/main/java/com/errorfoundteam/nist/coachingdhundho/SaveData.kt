@@ -182,3 +182,11 @@ class uploadgraduationcources(val  BSCphysics : String,
     constructor():this("","","","","","","","",""
     ,"","","","","","")
 }
+
+
+
+class SaveUserInfo(val name : String,
+                    val phNo : String,
+                    val gender : String){
+    constructor(): this("","","")
+}

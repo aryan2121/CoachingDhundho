@@ -49,7 +49,7 @@ class loginpage : AppCompatActivity(), InternetCheckBroadcast.ConnectionReceiver
 
         val phoneNumber = intent.getStringExtra("phoneNumber")
         mAuth = FirebaseAuth.getInstance()
-        textView4.text = phoneNumber
+        textView4.text = "+91 $phoneNumber"
         verifyPhoneNumber(phoneNumber!!)
 
         //changing statusbar color
@@ -121,8 +121,8 @@ class loginpage : AppCompatActivity(), InternetCheckBroadcast.ConnectionReceiver
                         editText_otp.setText("${credential.smsCode}")
 
                         Toast.makeText(this,"phone number added",Toast.LENGTH_LONG).show()
-                        startActivity(Intent(this,Home0::class.java))
-//                        finish()
+                        startActivity(Intent(this,DetailsPhoneLogin::class.java))
+                        finish()
                     }
                 }
                 .addOnFailureListener {

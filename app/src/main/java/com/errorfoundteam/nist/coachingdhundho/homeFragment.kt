@@ -29,8 +29,6 @@ import kotlin.random.Random
 
 class homeFragment : Fragment() {
 
-
-
     override fun onResume() {
         super.onResume()
     }
@@ -74,11 +72,11 @@ class homeFragment : Fragment() {
         val intent = Intent(context, openInstitute::class.java)
 
         Toast.makeText(context,"This is Home Activity",Toast.LENGTH_SHORT).show()
-        val ref = FirebaseDatabase.getInstance().getReference("/Institutes/").orderByPriority()
+        val ref = FirebaseDatabase.getInstance().getReference("/Institutes/")
         ref.addValueEventListener(object : ValueEventListener {
 
             override fun onCancelled(p0: DatabaseError) {
-                Toast.makeText(context,"Sorry Some Error Occurs",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"Sorry Some Error occured",Toast.LENGTH_SHORT).show()
             }
 
 
